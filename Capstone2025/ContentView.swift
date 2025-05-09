@@ -27,10 +27,22 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                     
                 
-                    NavigationLink(destination: Text ("Focus on your breathing and heartbeat.")){
-                            Text("Click Here")
+                    NavigationLink(destination: Text ("Focus on your breathing 💨 and heartbeat 💓.")
+                        .padding(.all)){
+                            Text("💜 Click Here")
+                                .padding(.all)
+                            
+                            NavigationLink(destination: Text ("Picture something that makes you feel calm 🌴 and happy 😊!")
+                                .padding(.all)) {
+                                    Text ("💙 Click Here")
+                                        .padding(.all)
+                            }
+                                
                     }
-
+                    Image ("soothing")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.all)
                 }
             }
             
