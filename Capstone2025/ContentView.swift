@@ -25,20 +25,12 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                    HStack {
-                        Image ("heart")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.all)
-                            .frame(width: 100.0, height: 100.0)
-                        
-                        Button("Click Here") {
-                        }
-                        .accessibilityHidden(/*@START_MENU_TOKEN@*/false/*@END_MENU_TOKEN@*/)
-                        .frame(width: 100.0, height: 100.0)
-                        .accessibilityAddTraits([.isButton, .isLink])
-                        .padding(.all)
+                    
+                
+                    NavigationLink(destination: Text ("Focus on your breathing and heartbeat.")){
+                            Text("Click Here")
                     }
+
                 }
             }
             
