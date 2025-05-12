@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        
         NavigationStack {
             ZStack {
                 Color.blue.opacity(0.3)
-                    .ignoresSafeArea();
+                    .ignoresSafeArea(.all);
+                
                 VStack {
                     Image("mindfulness")
                         .renderingMode(.original)
@@ -22,34 +24,33 @@ struct ContentView: View {
                         .padding(.all)
                     
                     Text("Mindfulness Moments")
-                        .font(.title)
+                        .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                    
-                
-                    NavigationLink(destination: Text ("Focus on your breathing 💨 and heartbeat 💓.")
-                        .padding(.all)){
-                            Text("💜 Click Here")
-                                .padding(.all)
-                            
-                            NavigationLink(destination: Text ("Picture something that makes you feel calm 🌴 and happy 😊!")
-                                .padding(.all)) {
-                                    Text ("💙 Click Here")
-                                        .padding(.all)
-                            }
-                                
+                                    
+                    NavigationLink(destination: BreathingView()) {
+                        Text("💜 Click Here")
+                            .padding()
                     }
+                    
+                    NavigationLink(destination: CalmImageView()) {
+                        Text("💙 Click Here")
+                            .padding()
+                    }
+                    
                     Image ("soothing")
                         .resizable(resizingMode: .stretch)
                         .aspectRatio(contentMode: .fit)
-                        .padding(.all)
-                }
-            }
-            
-            .padding()
+                        .padding(.all)                            }
+                                
+                    }
+                    
         }
-    }
-}
+                            }
+
+        }
+
+
     #Preview {
         ContentView()
     }
