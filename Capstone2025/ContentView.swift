@@ -21,27 +21,45 @@ struct ContentView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .foregroundColor(Color(hue: 0.625, saturation: 1.0, brightness: 1.0, opacity: 0.201))
+                        .cornerRadius(15)
+                        .shadow(radius: 15)
                         .padding(.all)
                     
                     Text("Mindfulness Moments")
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
-                                    
-                    NavigationLink(destination: BreathingView()) {
-                        Text("💜 Click Here")
-                            .padding()
-                    }
+                    Text ("Tools to use when you feel stressed or anxious!")
+                        .font(.caption)
+                        .padding(.bottom)
                     
-                    NavigationLink(destination: CalmImageView()) {
-                        Text("💙 Click Here")
-                            .padding()
+                    HStack {
+                        
+                        
+                        
+                        NavigationLink(destination: BreathingView()) {
+                            Text("💜 Click Here")
+                                .padding()
+                        }
+                        
+                        NavigationLink(destination: CalmImageView()) {
+                            Text("💙 Click Here")
+                                .padding()
+                        }
                     }
-                    
                     Image ("soothing")
                         .resizable(resizingMode: .stretch)
                         .aspectRatio(contentMode: .fit)
-                        .padding(.all)                            }
+                        .cornerRadius(15)
+                        .padding(.all)
+                    Image("mindfulness")
+                        .renderingMode(.original)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .foregroundColor(Color(hue: 0.625, saturation: 1.0, brightness: 1.0, opacity: 0.201))
+                        .cornerRadius(15)
+                        .shadow(radius: 15)
+                        .padding(.all)                }
                                 
                     }
                     
