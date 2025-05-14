@@ -42,6 +42,9 @@ struct BreathingView: View {
                 Link("15 Minute Stress Relief Yoga", destination: URL(string: "https://www.youtube.com/watch?v=Nw2oBIrQGLo")!)
                     .padding(.all)
                     .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
+                Link("Relaxing Music 🎵", destination: URL(string: "https://www.dailymotion.com/video/x95nwxw")!)
+                      .padding(.all)
+                      .border(Color.black, width: 1)
             }
         }
     }

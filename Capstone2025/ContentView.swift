@@ -29,23 +29,37 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .fontWeight(.bold)
                         .foregroundColor(Color.white)
+                        .padding(1)
                     Text ("Tools to use when you feel stressed or anxious!")
                         .font(.caption)
-                        .padding(.bottom)
+                        .foregroundColor(Color.black)
+                        .padding(.top)
+                    
                     
                     HStack {
                         
                         
                         
                         NavigationLink(destination: BreathingView()) {
-                            Text("💜 Click Here")
+                            Text("💜 STAY CALM")
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color.purple)
                                 .padding()
+                                .border(Color.purple, width: 10)
+                                
                         }
                         
                         NavigationLink(destination: CalmImageView()) {
-                            Text("💙 Click Here")
+                            Text("💙 USE YOUR SENSES")
+                                .fontWeight(.semibold)
+                                .foregroundColor(Color.blue)
+                                .multilineTextAlignment(.center)
                                 .padding()
+                                .border(Color.blue, width:10)
+                            
                         }
+                        .padding(.all)
+                        
                     }
                     Image ("soothing")
                         .resizable(resizingMode: .stretch)
