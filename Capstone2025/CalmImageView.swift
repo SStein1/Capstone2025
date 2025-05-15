@@ -23,14 +23,23 @@ struct CalmImageView: View {
                     .ignoresSafeArea(.all);
                 
                 VStack {
+                    Image ("background")
+                        .resizable(resizingMode: .stretch)
+                        .aspectRatio(contentMode: .fit)
+                        .padding(.horizontal)
+                        .clipShape(Circle())
+
+                    
                     Text ("Use your senses to calm your mind and body!")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color.green)
                         .multilineTextAlignment(.center)
                     Text ("Click on each of your 5 senses!")
-                        .font(.caption)
-                        .padding([.leading, .bottom, .trailing])
+                        .font(.body)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.black)
+                        .padding(.all)
                     
                     
                     VStack {
@@ -42,15 +51,8 @@ struct CalmImageView: View {
                         }
                         if eyesClicked {
                             Text("👀Picture something that makes you feel calm 🌴 and happy 😊!")
-                                .padding()
                                 .multilineTextAlignment(.center)
                         }
-                        
-                        //Text("👀Picture something that makes you feel calm 🌴 and happy 😊!")
-                        // .foregroundColor(Color.black)
-                        // .multilineTextAlignment(.center)
-                        // .padding()
-                        // .navigationTitle("Calm Place")
                         
                     }
                     
@@ -62,14 +64,10 @@ struct CalmImageView: View {
                     }
                     if earphonesClicked {
                         Text("🎧 Listen to relaxing music 🎵")
-                            .padding()
                             .multilineTextAlignment(.center)
                     }
                     
-                    
-                  //  Link("🎧 Listen to relaxing music 🎵", destination: URL(string: "https://www.dailymotion.com/video/x95nwxw")!)
-                        //.padding(.all)
-                    
+    
                     Button (action: {
                         noseClicked.toggle()
                     }) {
@@ -78,13 +76,8 @@ struct CalmImageView: View {
                     }
                     if noseClicked {
                         Text("👃 Stop and smell the roses 🌹!")
-                            .padding()
                             .multilineTextAlignment(.center)
                     }
-                    
-                    //Text ("👃 Stop and smell the roses 🌹!")
-                    // .multilineTextAlignment(.center)
-                    // .padding(.all)
                     
                     Button (action: {
                         handClicked.toggle()
@@ -94,12 +87,9 @@ struct CalmImageView: View {
                     }
                     if handClicked {
                         Text("✋🏽 Put your hands in cold water 💦 or pet a cat 🐈 or dog 🐕!")
-                            .padding()
                             .multilineTextAlignment(.center)
                     }
-                    //Text ("✋🏽 Use your sense of touch to calm and soothe... put your hands in cold water 💧 or pet a cat 🐈 or dog 🐕.")
-                    // .multilineTextAlignment(.center)
-                    // .padding(.all)
+                    
                     
                     Button (action: {
                         mouthClicked.toggle()
@@ -109,26 +99,35 @@ struct CalmImageView: View {
                     }
                     if mouthClicked {
                         Text("👅 Eat something sweet, sour or salty!")
-                            .padding()
                             .multilineTextAlignment(.center)
                     }
+                   // Spacer()
                     
-                    //Text ("👅 Eat something sweet, sour or salty!")
-                    //.multilineTextAlignment(.center)
-                    //.padding(.all)
                     
-                    HStack {
-                        Image ("puppies")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.all)
-                            .cornerRadius(15)
-                        Image ("beach")
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fit)
-                            .padding(.all)
-                            .cornerRadius(15)
+                    HStack(spacing: 3.0) {
+                        Image("puppies")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .clipped()
+                            .clipShape(Circle())
+                        Image("beach")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .clipped()
+                            .clipShape(Circle())
+                        
+                        Image("flowers")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .clipped()
+                            .clipShape(Circle())                            //.cornerRadius(15)
                     }
+                    
+                        
+                        .padding(.all)
                 }
             }
         }
