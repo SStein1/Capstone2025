@@ -15,6 +15,11 @@ struct CalmImageView: View {
     @State private var noseClicked = false
     @State private var handClicked = false
     @State private var mouthClicked = false
+    
+    @State private var userName: String = ""
+    @State private var showMessage: Bool = false
+    @State private var submittedName: String = ""
+
     var body: some View {
         
         NavigationStack {
@@ -125,9 +130,26 @@ struct CalmImageView: View {
                             .clipped()
                             .clipShape(Circle())                            //.cornerRadius(15)
                     }
+                    // Name input and success message
+                    TextField("Enter your name", text: $userName)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+
+                    Button("Submit") {
+                        submittedName = userName
+                            userName = ""
+                        }
                     
+                    .buttonStyle(.borderedProminent)
+                    .padding(.bottom)
+
+                    if !submittedName.isEmpty {
+                        Text("🎉 Great Job, \(submittedName)!")
+                            .font(.headline)
+                            .foregroundColor(.purple)
+                    }
+
                         
-                        .padding(.all)
                 }
             }
         }

@@ -17,7 +17,7 @@ struct BreathingView: View {
             
             
             VStack {
-                Text("Focus on your breathing 💨 and heartbeat 💓.")
+                Text("Activities to help you focus on your breathing 💨 and heartbeat 💓.")
                     .font(.title)
                     .fontWeight(.heavy)
                     .foregroundColor(Color.purple)
